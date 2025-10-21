@@ -24,7 +24,7 @@ configure_file(
 )
 
 target_include_directories(atl INTERFACE
-    $<BUILD_INTERFACE:${CMAKE_SOURCE_DIR}/include/atl> 
+    $<BUILD_INTERFACE:${CMAKE_SOURCE_DIR}/include> 
     # cmake_souce_dir : root dir    
 )
 
