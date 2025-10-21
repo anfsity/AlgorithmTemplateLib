@@ -1,11 +1,21 @@
 #include "atl/atl.hpp"
-#include <iostream>
-#include <numeric>
 
 int main() {
-  std::vector<int> a(10);
-  std::iota(a.begin(), a.end(), 0);
-  cp::ds::FenwickTree<int> bit(a);
-  std::cout << bit.rangeSum(1, 9) << "\n";
+  int n, q;
+  std::cin >> n >> q;
+  cp::graph::Dsu<int> dsu(n);
+
+  while(q --) {
+    int t;
+    std::cin >> t;
+    int x, y;
+    std::cin >> x >> y;
+    x --, y --;
+    if (t == 1) {
+      dsu.unite(x, y);  
+    } else {
+      std::cout << (dsu.same(x, y) ? "Y" : "N") << "\n";
+    }
+  }
   return 0;
 }
