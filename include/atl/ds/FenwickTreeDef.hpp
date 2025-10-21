@@ -7,7 +7,7 @@ namespace ds {
 
 template <typename T> class FenwickTree {
 private:
-  std::vector<T> tree;
+  std::vector<T> tree{0};
   int lowbit(int x) { return x & -x; };
 
 public:
